@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    public Transform target;
-
-    public float speed;
+    private GameObject player;
+    private Camera cam;
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        cam = Camera.main;
+    }
     void Start()
     {
         
@@ -17,8 +19,6 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 cameraDirection = target.position - transform.position; 
-
-        cameraDirection.Normalize();
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
     }
 }
