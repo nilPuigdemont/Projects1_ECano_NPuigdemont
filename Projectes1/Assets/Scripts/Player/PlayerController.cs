@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovementHandeler()
     {
-        Vector3 direction = new Vector3(hInput, vInput, 0f);
+        Vector3 direction = new Vector3(hInput, vInput);
 
         direction = direction.normalized;
 
