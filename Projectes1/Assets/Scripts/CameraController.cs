@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private GameObject player;
-    private Camera cam;
+    public Transform player;
+    public Camera cam;
+    public float threshold;
+
+    Vector3 mousePos;
+
+    Vector3 targetPos;
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        cam = Camera.main;
+        
     }
     void Start()
     {
@@ -19,6 +23,26 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+        CameraPositionHandeler();
+    }
+
+    private void FixedUpdate()
+    {
+        CameraPosition();
+    }
+
+    private void CameraPosition()
+    {
+        transform.position = new Vector3(targetPos.x, targetPos.y, transform.position.z);
+    }
+
+    private void CameraPositionHandeler()
+    {
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        targetPos = (player.position + mousePos) / 2f;
+
+        targetPos.x = Mathf.Clamp(targetPos.x, -threshold + player.position.x, threshold + player.position.x);
+        targetPos.y = Mathf.Clamp(targetPos.y, -threshold + player.position.y, threshold + player.position.y);
     }
 }
