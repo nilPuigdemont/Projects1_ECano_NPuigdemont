@@ -1,4 +1,5 @@
 Hotline Miami- like
+
 Vista top down, moviment amb WASD, accions amb Mouse, eliminar tots els enemics d’un nivell per passar al següent (posar petita puntuació entremig, extra: combos de puntuació, també en funció de temps). Es poden fer varis nivells amb distribucions diferents (possible extra: modo infinit on van spawnejant enemics infinitament i vas a per la highscore).
 
 Estil visual
