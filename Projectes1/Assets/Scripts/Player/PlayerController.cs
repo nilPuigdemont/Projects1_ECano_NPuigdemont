@@ -19,12 +19,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         InputHandeler();
-
+        
     }
 
     private void FixedUpdate()
     {
         MovementHandeler();
+        LookToMouse();  
     }
 
     private void MovementHandeler()
@@ -40,5 +41,16 @@ public class PlayerController : MonoBehaviour
     {
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
+    }
+
+    private void LookToMouse()
+    {
+      var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 rot = mousePosition - transform.position;
+
+        float rotz = Mathf.Atan2(rot.y, rot.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0,0,rotz);
     }
 }
