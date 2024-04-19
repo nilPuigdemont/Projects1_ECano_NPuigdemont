@@ -11,6 +11,7 @@ Mecàniques
 
 Player
 
+
 Navegació
 
 WASD pel moviment en nivells, la càmera segueix sempre al player (es mou amb ell, es pot mirar de que es mogui una mica amb el mouse com el Hotline Miami  o el LoL).
