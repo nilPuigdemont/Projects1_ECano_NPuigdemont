@@ -13,13 +13,12 @@ public class PatrolAction : Action
 
     private void Patrol(StateController controller)
     {
-        controller.navMeshAgent.destination = controller.wayPointList[controller.nextWayPoint].position;
-        
-        
-
-        if(controller.navMeshAgent.remainingDistance <= controller.navMeshAgent.stoppingDistance && !controller.navMeshAgent.pathPending)
+      var patrolAgent = controller.GetComponent<PatrollingAgent>();
+      var patrollPoints = controller.GetComponent<PatrollPoints>();
+       
+        if(patrollPoints.HasReached(patrolAgent))
         {
-            controller.nextWayPoint = (controller.nextWayPoint + 1) % controller.wayPointList.Count;
+            patrolAgent.SetDestination(patrollPoints.GetNext().position); 
         }
     }
 

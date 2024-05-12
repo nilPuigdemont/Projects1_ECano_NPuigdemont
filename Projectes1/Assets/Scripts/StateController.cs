@@ -12,12 +12,16 @@ public class StateController : MonoBehaviour
     private bool aiActive;
 
     [HideInInspector] public NavMeshAgent navMeshAgent;
-    [HideInInspector] public List<Transform> wayPointList;
+    //public List<Transform> wayPointList;
     [HideInInspector] public int nextWayPoint;
+
+    public PatrollingAgent patrollingAgent;
+    public PatrollPoints patrollPoints;
 
     private void Awake()
     {
         navMeshAgent= GetComponent<NavMeshAgent>();
+        patrollingAgent= GetComponent<PatrollingAgent>();
     }
     void Start()
     {
@@ -27,16 +31,10 @@ public class StateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (!aiActive)
-        {
-            return;
-        }
-
         currentState.UpdateState(this);
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         if (currentState != null)
         {
@@ -44,5 +42,5 @@ public class StateController : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position,0.5f);
             
         }
-    }
+    }*/
 }

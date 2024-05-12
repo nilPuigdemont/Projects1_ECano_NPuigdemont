@@ -9,5 +9,7 @@ public class EnemyStats : ScriptableObject
     public float currentHealth;
 
 
+    public float speed;
+
 
 }
