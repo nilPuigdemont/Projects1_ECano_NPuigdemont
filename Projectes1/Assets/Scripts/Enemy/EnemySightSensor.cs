@@ -7,7 +7,7 @@ public class EnemySightSensor : MonoBehaviour
     public Transform Player { get; private set; }
     public float sightDistance = 5.0f;
     public float lostDistance = 10.0f;
-
+    public float shootDistance = 10f; 
     private void Awake()
     {
         Player = GameObject.Find("Player").transform;
@@ -30,5 +30,10 @@ public class EnemySightSensor : MonoBehaviour
     public bool Pong()
     {
         return GetPlayerDistance() > lostDistance;
+    }
+
+    public bool InRangeToShoot()
+    {
+        return GetPlayerDistance() <= shootDistance;
     }
 }

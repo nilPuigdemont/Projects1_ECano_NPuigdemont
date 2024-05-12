@@ -21,7 +21,8 @@ public class PatrollingAgent : MonoBehaviour
     {
         get
         {
-            return (destination - new Vector2(transform.position.x, transform.position.y)).magnitude;
+            return (destination - new Vector2(transform.position.x, 
+                   transform.position.y)).magnitude;
         }
     }
 
@@ -66,7 +67,8 @@ public class PatrollingAgent : MonoBehaviour
             moveDirection = Vector2.zero;
 
             if (remainingDistance > stoppingDistance)
-                moveDirection = (destination - new Vector2(transform.position.x, transform.position.y)).normalized;
+                moveDirection = (destination - new Vector2(transform.position.x, 
+                                 transform.position.y)).normalized;
         }
 
         if (moveDirection.sqrMagnitude > 0.0f)
@@ -77,8 +79,11 @@ public class PatrollingAgent : MonoBehaviour
 
     void UpdateAnimation()
     {
-        animator.SetFloat("LookAtX", lookAt.x);
-        animator.SetFloat("LookAtY", lookAt.y);
-        animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
+        if (animator != null)
+        {
+            animator.SetFloat("LookAtX", lookAt.x);
+            animator.SetFloat("LookAtY", lookAt.y);
+            animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
+        }
     }
 }
