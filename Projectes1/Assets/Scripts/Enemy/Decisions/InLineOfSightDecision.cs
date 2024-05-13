@@ -8,8 +8,9 @@ public class InLineOfSightDecision : Decision
 {
     public override bool Decide(BaseStateMachine stateMachine)
     {
-       var enemyInLineOfSight = stateMachine.GetComponent<EnemySightSensor>();
-        return enemyInLineOfSight.Ping();
+       var enemyInLineOfSight = stateMachine.GetComponent<EnemyVision>();
+       
+        return enemyInLineOfSight.FOV();
     }
 
   

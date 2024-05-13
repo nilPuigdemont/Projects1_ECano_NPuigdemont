@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
+        References.player = gameObject;
     }
 
     // Update is called once per frame
@@ -49,8 +50,8 @@ public class PlayerController : MonoBehaviour
 
         Vector3 rot = mousePosition - transform.position;
 
-        float rotz = Mathf.Atan2(rot.y, rot.x) * Mathf.Rad2Deg;
+        float rotate = Mathf.Atan2(rot.y, rot.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0,0,rotz);
+        rb.rotation = rotate -90;
     }
 }

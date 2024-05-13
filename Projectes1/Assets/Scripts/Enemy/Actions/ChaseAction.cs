@@ -9,6 +9,6 @@ public class ChaseAction : FSMAction
         var patrollingAgent = stateMachine.GetComponent<PatrollingAgent>();
         var enemySightSensor = stateMachine.GetComponent<EnemySightSensor>();
 
-        patrollingAgent.SetDestination(enemySightSensor.Player.position);
+        patrollingAgent.SetDestination(References.player.transform.position);
     }
 }

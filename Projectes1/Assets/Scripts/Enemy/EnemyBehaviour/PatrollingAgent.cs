@@ -41,6 +41,7 @@ public class PatrollingAgent : MonoBehaviour
     {
         destination = newDestination;
         hasPath = true;
+        
     }
 
     // Start is called before the first frame update
@@ -55,13 +56,16 @@ public class PatrollingAgent : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = moveDirection * moveSpeed;
-
+        LookToTarget(destination);
         UpdateAnimation();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
+
         if (hasPath)
         {
             moveDirection = Vector2.zero;
@@ -69,12 +73,10 @@ public class PatrollingAgent : MonoBehaviour
             if (remainingDistance > stoppingDistance)
                 moveDirection = (destination - new Vector2(transform.position.x, 
                                  transform.position.y)).normalized;
+                
         }
 
-        if (moveDirection.sqrMagnitude > 0.0f)
-        {
-            lookAt = moveDirection;
-        }
+        
     }
 
     void UpdateAnimation()
@@ -86,4 +88,12 @@ public class PatrollingAgent : MonoBehaviour
             animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
         }
     }
+
+    private void LookToTarget(Vector3 target)
+    {
+
+        Vector3 lookDirection = target - transform.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90;
+        rb.rotation = angle;
+    } 
 }
