@@ -3794,6 +3794,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &194765086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194765087}
+  m_Layer: 6
+  m_Name: ShotPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &194765087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194765086}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 738764779}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &202659972
 GameObject:
   m_ObjectHideFlags: 0
@@ -5322,6 +5353,7 @@ GameObject:
   - component: {fileID: 379340403}
   - component: {fileID: 379340407}
   - component: {fileID: 379340408}
+  - component: {fileID: 379340409}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -5437,6 +5469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dfe7de835d7c342adeeaf30c9f1b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
   stoppingDistance: 0.5
 --- !u!114 &379340406
 MonoBehaviour:
@@ -5459,13 +5492,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379340396}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 057b38c14e7a9644a8279d3fd3f1d785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5278590127237664194, guid: 1d0674ee75c899c4b9d089abe4039439, type: 3}
   shootPos: {fileID: 760655890}
+  timeBetweenShoot: 0.2
 --- !u!114 &379340408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5478,11 +5512,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fdaaa048a86284b8e9afc2e9ce7e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5.64
+  radius: 5.65
   angle: 58.9
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &379340409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379340396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241e4a94d2db4f14c89a5df84c94cf09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5278590127237664194, guid: 1d0674ee75c899c4b9d089abe4039439, type: 3}
+  accuracy: 100
+  numberBullets: 1
+  secBeetweenShots: 0.15
+  audioSource: {fileID: 0}
+  kickAmount: 0
+  shotPos: {fileID: 760655890}
 --- !u!1 &388364923
 GameObject:
   m_ObjectHideFlags: 0
@@ -9141,8 +9194,10 @@ GameObject:
   m_Component:
   - component: {fileID: 738764779}
   - component: {fileID: 738764781}
-  - component: {fileID: 738764782}
   - component: {fileID: 738764783}
+  - component: {fileID: 738764782}
+  - component: {fileID: 738764784}
+  - component: {fileID: 738764785}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -9164,6 +9219,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1937841091}
+  - {fileID: 194765087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &738764781
@@ -9240,7 +9296,41 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
+--- !u!114 &738764784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738764778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241e4a94d2db4f14c89a5df84c94cf09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5278590127237664194, guid: 1d0674ee75c899c4b9d089abe4039439, type: 3}
+  accuracy: 100
+  numberBullets: 1
+  secBeetweenShots: 0.15
+  audioSource: {fileID: 0}
+  kickAmount: 0
+  shotPos: {fileID: 194765087}
+--- !u!114 &738764785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738764778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b6f7e89a87b574cb90db3ac35aa44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBarPrefab: {fileID: 0}
+  deathEffectPrefb: {fileID: 0}
 --- !u!1 &745427388
 GameObject:
   m_ObjectHideFlags: 0
@@ -9421,7 +9511,7 @@ GameObject:
   m_Layer: 7
   m_Name: ShootPos
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

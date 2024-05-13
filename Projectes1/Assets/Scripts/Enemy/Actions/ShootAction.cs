@@ -10,11 +10,11 @@ public class ShootAction : FSMAction
     {
         var enemyVision = stateMachine.GetComponent<EnemyVision>();
 
-        var enemyShootBehaviour = stateMachine.GetComponent<ShootBehaviour>();
+        var enemyShootBehaviour = stateMachine.GetComponent<WeaponBehavior>();
 
         if (enemyVision.FOV())
         {
-            enemyShootBehaviour.Shoot();
+            enemyShootBehaviour.Fire();
         }
         
 

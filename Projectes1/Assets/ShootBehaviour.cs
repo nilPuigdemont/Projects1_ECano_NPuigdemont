@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class ShootBehaviour : MonoBehaviour
     public GameObject bullet;
     public Transform shootPos;
 
+    public float timeBetweenShoot;
+    private float currentTime;
     private Rigidbody2D rb;
     void Start()
     {
@@ -17,13 +20,32 @@ public class ShootBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LookToTarget(References.player.transform.position);
-            
+
+        LookToTarget(References.player.transform.position);   
+        
+        currentTime += Time.deltaTime;
+
     }
 
     public void Shoot()
     {
-       Instantiate(bullet, shootPos.position,Quaternion.identity);
+        if (CanShoot())
+        {
+            
+            Instantiate(bullet, shootPos.position, transform.rotation);
+            currentTime = 0;
+        }
+       
+    }
+
+    private bool CanShoot()
+    {
+        if (currentTime >= timeBetweenShoot)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void LookToTarget(Vector3 target)

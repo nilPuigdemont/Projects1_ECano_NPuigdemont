@@ -10,9 +10,14 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     private Rigidbody2D rb;
+
+    private WeaponBehavior weaponBehavior;
+
+    
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
+        weaponBehavior = GetComponent<WeaponBehavior>();
         References.player = gameObject;
     }
 
@@ -42,6 +47,14 @@ public class PlayerController : MonoBehaviour
     {
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
+
+        
+
+
+        if (Input.GetKey(KeyCode.Mouse0)) 
+        {
+            weaponBehavior.Fire();
+        }
     }
 
     private void LookToMouse()
@@ -54,4 +67,6 @@ public class PlayerController : MonoBehaviour
 
         rb.rotation = rotate -90;
     }
+
+
 }

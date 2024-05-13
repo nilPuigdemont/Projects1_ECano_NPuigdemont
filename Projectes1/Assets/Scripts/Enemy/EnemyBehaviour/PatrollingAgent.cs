@@ -13,7 +13,7 @@ public class PatrollingAgent : MonoBehaviour
     private Vector2 destination;
 
 
-    private float moveSpeed;
+    [HideInInspector]public float moveSpeed;
     public float stoppingDistance = 0.001f;
 
     BaseStateMachine stateMachine;
