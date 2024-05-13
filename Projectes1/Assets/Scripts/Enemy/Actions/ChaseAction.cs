@@ -11,4 +11,10 @@ public class ChaseAction : FSMAction
 
         patrollingAgent.SetDestination(References.player.transform.position);
     }
+
+    public override void OnExit(BaseStateMachine stateMachine)
+    {
+        var patrolAgent = stateMachine.GetComponent<PatrollingAgent>();
+        patrolAgent.hasPath = false;
+    }
 }

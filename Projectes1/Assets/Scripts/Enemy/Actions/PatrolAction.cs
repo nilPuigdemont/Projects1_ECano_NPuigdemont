@@ -21,5 +21,11 @@ public class PatrolAction : FSMAction
         if (patrolPoints.HasReached(patrolAgent))
             patrolAgent.SetDestination(patrolPoints.GetNext().position);
     }
+
+    public override void OnExit(BaseStateMachine stateMachine)
+    {
+        var patrolAgent = stateMachine.GetComponent<PatrollingAgent>();
+            patrolAgent.hasPath = false;
+    }
 }
 

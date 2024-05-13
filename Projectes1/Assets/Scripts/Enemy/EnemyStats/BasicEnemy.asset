@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc3a48416356c7d4082ce242cdff9ae9, type: 3}
-  m_Name: ShootState
+  m_Script: {fileID: 11500000, guid: 51e6340e0a15e6f4da8fc4d3943b3d57, type: 3}
+  m_Name: BasicEnemy
   m_EditorClassIdentifier: 
-  Action:
-  - {fileID: 11400000, guid: 8a9ec277cb5566e4ebf1beea175197cd, type: 2}
-  Transitions:
-  - {fileID: 11400000, guid: 1a99f7474910c7e4f920148d128f5ba9, type: 2}
+  maxHealth: 100
+  currentHealth: 0
+  speed: 5

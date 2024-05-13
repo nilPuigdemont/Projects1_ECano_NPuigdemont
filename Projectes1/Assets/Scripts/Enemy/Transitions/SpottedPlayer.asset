@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpottedPlayer
   m_EditorClassIdentifier: 
   Decision: {fileID: 11400000, guid: c25a799cdc4b9814882f510264de984f, type: 2}
-  TrueState: {fileID: 11400000, guid: 94a655359764aa34ea225b4f5fd27a8b, type: 2}
+  TrueState: {fileID: 11400000, guid: 832a02feb2e0e2741b391d4e54ce2ca8, type: 2}
   FalseState: {fileID: 11400000, guid: b4109edbaae82be47bc72675d108865b, type: 2}

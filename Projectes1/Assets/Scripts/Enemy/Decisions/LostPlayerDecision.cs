@@ -8,6 +8,7 @@ public class LostPlayerDecision : Decision
     public override bool Decide(BaseStateMachine stateMachine)
     {
         var enemyInLineOfSight = stateMachine.GetComponent<EnemyVision>();
-        return !enemyInLineOfSight.FOV();
+
+        return enemyInLineOfSight.FOV() == false;
     }
 }

@@ -5437,7 +5437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dfe7de835d7c342adeeaf30c9f1b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   stoppingDistance: 0.5
 --- !u!114 &379340406
 MonoBehaviour:
@@ -5451,6 +5450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a9e92e031d3d44ab4cdf9eae19de36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: dce5dcb896cea7f42b48a254342078aa, type: 2}
   _initialState: {fileID: 11400000, guid: 7ff94fba154d0f94e9287ea94e2864c2, type: 2}
 --- !u!114 &379340407
 MonoBehaviour:
@@ -5478,8 +5478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fdaaa048a86284b8e9afc2e9ce7e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
-  angle: 90
+  radius: 5.64
+  angle: 58.9
   targetLayer:
     serializedVersion: 2
     m_Bits: 64

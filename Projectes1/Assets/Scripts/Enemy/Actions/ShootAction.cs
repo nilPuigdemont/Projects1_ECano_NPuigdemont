@@ -8,11 +8,15 @@ public class ShootAction : FSMAction
 {
     public override void Execute(BaseStateMachine stateMachine)
     {
-        var enemySightSensor = stateMachine.GetComponent<EnemySightSensor>();
+        var enemyVision = stateMachine.GetComponent<EnemyVision>();
 
         var enemyShootBehaviour = stateMachine.GetComponent<ShootBehaviour>();
 
-        enemyShootBehaviour.Shoot();
+        if (enemyVision.FOV())
+        {
+            enemyShootBehaviour.Shoot();
+        }
+        
 
     }
 }

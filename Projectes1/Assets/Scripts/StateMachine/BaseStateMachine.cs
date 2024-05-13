@@ -5,7 +5,11 @@ using System;
 
 public class BaseStateMachine : MonoBehaviour
 {
+    public EnemyStats enemyStats;
     [SerializeField] private BaseState _initialState;
+
+    public float speed => enemyStats.speed;
+
     private Dictionary<Type, Component> _cachedComponents; 
     // Start is called before the first frame update
     private void Awake()

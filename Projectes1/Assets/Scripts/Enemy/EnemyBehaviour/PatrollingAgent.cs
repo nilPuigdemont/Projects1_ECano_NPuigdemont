@@ -12,10 +12,20 @@ public class PatrollingAgent : MonoBehaviour
 
     private Vector2 destination;
 
-    public float moveSpeed = 5.0f;
+
+    private float moveSpeed;
     public float stoppingDistance = 0.001f;
 
-    public bool hasPath { get; private set; }
+    BaseStateMachine stateMachine;
+
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        stateMachine = GetComponent<BaseStateMachine>();
+    }
+    public bool hasPath { get;  set; }
 
     public float remainingDistance
     {
@@ -47,8 +57,7 @@ public class PatrollingAgent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        moveSpeed = stateMachine.speed;
 
         hasPath = false;
     }
@@ -56,8 +65,13 @@ public class PatrollingAgent : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = moveDirection * moveSpeed;
-        LookToTarget(destination);
+        
         UpdateAnimation();
+
+        if(hasPath) 
+        {
+            LookToTarget(destination); 
+        }
     }
 
     // Update is called once per frame
@@ -74,7 +88,7 @@ public class PatrollingAgent : MonoBehaviour
                 moveDirection = (destination - new Vector2(transform.position.x, 
                                  transform.position.y)).normalized;
                 
-        }
+        }else if (!hasPath) { moveDirection = moveDirection = Vector2.zero; }
 
         
     }
@@ -96,4 +110,6 @@ public class PatrollingAgent : MonoBehaviour
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90;
         rb.rotation = angle;
     } 
+
+
 }
