@@ -9264,6 +9264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  playerAnimator: {fileID: 1937841093}
 --- !u!58 &738764783
 CircleCollider2D:
   m_ObjectHideFlags: 0
