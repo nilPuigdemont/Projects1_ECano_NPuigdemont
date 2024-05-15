@@ -18,7 +18,7 @@ public class BulletBehavior : MonoBehaviour
         GameObject player = References.player;
         Vector3 direction = player.transform.position - transform.position;
 
-        rb.velocity = new Vector2(direction.x, direction.y).normalized * bulletSpeed;
+        rb.velocity =  transform. up * bulletSpeed;
     }
 
     // Update is called once per frame
@@ -37,6 +37,8 @@ public class BulletBehavior : MonoBehaviour
         }
 
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

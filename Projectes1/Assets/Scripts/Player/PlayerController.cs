@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private WeaponBehavior weaponBehavior;
 
+    public Animator playerAnimator;
     
     void Start()
     {
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour
 
         rb.rotation = rotate -90;
     }
+
 
 
 }
