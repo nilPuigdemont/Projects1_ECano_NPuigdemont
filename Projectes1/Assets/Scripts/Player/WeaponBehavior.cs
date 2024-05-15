@@ -17,18 +17,20 @@ public class WeaponBehavior : MonoBehaviour
     public float kickAmount;
 
     public Transform shotPos;
+    Rigidbody2D rb;
 
     void Start()
     {
         secondsSinceLastShot = secBeetweenShots;
         audioSource = GetComponent<AudioSource>();  
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         secondsSinceLastShot += Time.deltaTime;
-
+        LookToTarget(References.player.transform.position);
     }
 
 
@@ -63,6 +65,14 @@ public class WeaponBehavior : MonoBehaviour
             }
             
         }
+    }
+
+    private void LookToTarget(Vector3 target)
+    {
+
+        Vector3 lookDirection = target - transform.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90;
+        rb.rotation = angle;
     }
 }
 
