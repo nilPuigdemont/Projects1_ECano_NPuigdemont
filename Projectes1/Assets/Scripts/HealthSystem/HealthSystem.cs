@@ -14,6 +14,9 @@ public class HealthSystem : MonoBehaviour
     public GameObject deathEffectPrefb;
 
     HealthBarBehavior myHealthBar;
+    public Transform canvas;
+
+    [SerializeField] private float offset;
     public void TakeDamage(float damageAmount)
     {
 
@@ -48,8 +51,8 @@ public class HealthSystem : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        /*GameObject healthBarObj = Instantiate(healthBarPrefab, References.canvas.transform);
-        myHealthBar = healthBarObj.GetComponent<HealthBarBehavior>();*/
+        GameObject healthBarObj = Instantiate(healthBarPrefab, canvas.transform);
+        myHealthBar = healthBarObj.GetComponent<HealthBarBehavior>();
     }
 
     // Update is called once per frame
@@ -57,6 +60,6 @@ public class HealthSystem : MonoBehaviour
     {
         myHealthBar.ShowHealthFraction(currentHealth/maxHealth);
 
-        myHealthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 3); 
+        myHealthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * offset); 
     }
 }
