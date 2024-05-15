@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         InputHandeler();
-        
+        PlayerAnimator();
     }
 
     private void FixedUpdate()
@@ -70,5 +70,8 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
+    void PlayerAnimator()
+    {
+        playerAnimator.SetBool("Shoot", Input.GetKey(KeyCode.Mouse0));
+    }
 }
