@@ -4,7 +4,7 @@ Vista top down, moviment amb WASD, accions amb Mouse, eliminar tots els enemics 
 
 Estil visual
 
-pixel art sci-fi (ciutat, neó). Música i sound effects gratis
+pixel art sci-fi (ciutat, interior). Música i sound effects gratis
 
 
 Mecàniques
@@ -14,13 +14,13 @@ Player
 
 Navegació
 
-WASD pel moviment en nivells, la càmera segueix sempre al player (es mou amb ell, es pot mirar de que es mogui una mica amb el mouse com el Hotline Miami  o el LoL).
+WASD pel moviment en nivells, la càmera segueix sempre al player (es mou amb ell, es mou una mica amb el mouse com el Hotline Miami  o el LoL).
 
 Atacar
 
 Click esquerre del ratolí, fa servir l’arma equipada (dos tipus: melee i a distancia, a distancia sempre son armes de foc), si no hi ha arma equipada s’interpreten els punys com a arma melee básica. Els atacs només fan mal als enemics (extra: entorns destructibles)
 
-Llançar arma
+Extra: Llançar arma
 
 Click dret, llança l’arma equipada cap a la direcció del mouse (igual que un atac a distància, pero es perd l’arma equipada). No es pot dur a terme si el player no té armes.
 
