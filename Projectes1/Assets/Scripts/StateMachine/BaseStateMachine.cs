@@ -8,6 +8,7 @@ public class BaseStateMachine : MonoBehaviour
     public EnemyStats enemyStats;
     [SerializeField] private BaseState _initialState;
 
+    public Animator animator;
     public float speed => enemyStats.speed;
 
     private Dictionary<Type, Component> _cachedComponents; 

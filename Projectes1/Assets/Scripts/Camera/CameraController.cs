@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
 
     private void CameraPosition()
     {
-        transform.position = new Vector3(targetPos.x, targetPos.y, transform.position.z);
+        transform.position = new Vector3(targetPos.x, targetPos.y , transform.position.z);
     }
 
     private void CameraPositionHandeler()

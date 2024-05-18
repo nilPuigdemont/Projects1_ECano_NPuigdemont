@@ -10,6 +10,7 @@ public class PatrolAction : FSMAction
         var patrolAgent = stateMachine.GetComponent<PatrollingAgent>();
         var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
 
+        stateMachine.animator.SetBool("Shoot", false);
         patrolAgent.SetDestination(patrolPoints.GetNext().position);
     }
 

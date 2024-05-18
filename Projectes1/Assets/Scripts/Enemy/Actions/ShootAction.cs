@@ -15,6 +15,7 @@ public class ShootAction : FSMAction
         if (enemyVision.FOV())
         {
             enemyShootBehaviour.Fire();
+            stateMachine.animator.SetBool("Shoot", true);
         }
         
 

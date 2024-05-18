@@ -8,6 +8,7 @@ public class ChaseAction : FSMAction
     {
         var patrollingAgent = stateMachine.GetComponent<PatrollingAgent>();
         patrollingAgent.moveSpeed = patrollingAgent.moveSpeed + 2;
+        stateMachine.animator.SetBool("Shoot", false);
     }
     public override void Execute(BaseStateMachine stateMachine)
     {
