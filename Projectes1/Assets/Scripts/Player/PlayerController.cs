@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
     
+
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
@@ -73,5 +74,6 @@ public class PlayerController : MonoBehaviour
     void PlayerAnimator()
     {
         playerAnimator.SetBool("Shoot", Input.GetKey(KeyCode.Mouse0));
+        playerAnimator.SetBool("Walking", hInput > 0 || hInput < 0 || vInput < 0 || vInput > 0);
     }
 }
