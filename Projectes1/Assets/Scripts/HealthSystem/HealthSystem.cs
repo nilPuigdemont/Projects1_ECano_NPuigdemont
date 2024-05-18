@@ -8,7 +8,7 @@ public class HealthSystem : MonoBehaviour
     // Start is called before the first frame update
     [FormerlySerializedAs("health")]
     public float maxHealth;
-    float currentHealth;
+    [HideInInspector] public float currentHealth;
 
     public GameObject healthBarPrefab;
     public GameObject deathEffectPrefb;
@@ -30,6 +30,10 @@ public class HealthSystem : MonoBehaviour
                 if (deathEffectPrefb != null)
                 {
                     Instantiate(deathEffectPrefb, transform.position, transform.rotation);
+                }
+                if(this.gameObject.tag == "Player")
+                {
+                    LevelManager.palyerDead = true;
                 }
                 Destroy(gameObject);
 

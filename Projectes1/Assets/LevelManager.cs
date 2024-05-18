@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public GameObject textUI;
+    public static bool palyerDead;
     void Awake()
     {
-
+        palyerDead = false;
     }
 
     // Update is called once per frame
@@ -19,5 +20,14 @@ public class LevelManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        if(palyerDead == true)
+        {
+            textUI.SetActive(true);
+        }else
+        {
+            textUI.SetActive(false);
+        }
+       
     }
 }
