@@ -39,5 +39,6 @@ public class BarrelExplosionBehaviour : MonoBehaviour
                 inRange[i].GetComponent<HealthSystem>().TakeDamage(damage);
             }
         }
+        Destroy(gameObject);
     }
 }

@@ -50,6 +50,13 @@ public class BulletBehavior : MonoBehaviour
                 Destroy(gameObject);
             }
 
+            if(other.gameObject.tag == "Explosive")
+            {
+               
+                other.GetComponent<BarrelExplosionBehaviour>().Explosion();
+
+            }
+
             Destroy(gameObject);
 
     }
