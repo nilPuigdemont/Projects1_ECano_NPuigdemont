@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyVision : MonoBehaviour
@@ -51,9 +51,10 @@ public class EnemyVision : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+#if UNITY_EDITOR
         Gizmos.color = Color.white;
 
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
+        Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
 
         Vector3 angle1 = DirectionFromAngle(-transform.eulerAngles.z, -angle / 2);
         Vector3 angle2 = DirectionFromAngle(-transform.eulerAngles.z, angle / 2);
@@ -67,6 +68,7 @@ public class EnemyVision : MonoBehaviour
             Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, References.player.transform.position);
         }
+#endif
     }
 
     private Vector2 DirectionFromAngle(float eulerY, float angleInDegrees)
