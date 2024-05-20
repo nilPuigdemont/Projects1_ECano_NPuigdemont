@@ -23,7 +23,11 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CameraPositionHandeler();
+        if(References.player != null)
+        {
+            CameraPositionHandeler();
+        }
+        
     }
 
     private void FixedUpdate()

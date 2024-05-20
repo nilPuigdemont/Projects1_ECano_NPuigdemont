@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class PatrolPoints : MonoBehaviour
 {
     [SerializeField] private Transform[] _patrolPoints;
+    public Transform[] _PatrolPoints => _patrolPoints;
 
     public Transform CurrentPoint => _patrolPoints[_currentPoint];
 
@@ -17,9 +18,13 @@ public class PatrolPoints : MonoBehaviour
     /// <returns></returns>
     public Transform GetNext()
     {
-        var point = _patrolPoints[_currentPoint];
-        _currentPoint = (_currentPoint + 1) % _patrolPoints.Length;
-        return point;
+        if (_PatrolPoints != null)
+        {
+            var point = _patrolPoints[_currentPoint];
+            _currentPoint = (_currentPoint + 1) % _patrolPoints.Length;
+            return point;
+        }
+       return null;
     }
 
     /// <summary>

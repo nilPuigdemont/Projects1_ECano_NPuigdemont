@@ -30,7 +30,11 @@ public class WeaponBehavior : MonoBehaviour
     void Update()
     {
         secondsSinceLastShot += Time.deltaTime;
-        LookToTarget(References.player.transform.position);
+        if(References.player != null)
+        {
+            LookToTarget(References.player.transform.position);
+        }
+        
     }
 
 

@@ -11,7 +11,11 @@ public class PatrolAction : FSMAction
         var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
 
         stateMachine.animator.SetBool("Shoot", false);
-        patrolAgent.SetDestination(patrolPoints.GetNext().position);
+        if(patrolPoints._PatrolPoints != null)
+        {
+            patrolAgent.SetDestination(patrolPoints.GetNext().position);
+        }
+        
     }
 
     public override void Execute(BaseStateMachine stateMachine)
