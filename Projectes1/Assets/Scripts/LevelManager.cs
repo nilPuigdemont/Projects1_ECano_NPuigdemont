@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject textUI;
     public static bool palyerDead;
+    public int sceneToReload;
     void Awake()
     {
         palyerDead = false;
@@ -18,7 +19,7 @@ public class LevelManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R)) 
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(sceneToReload);
         }
 
         if(palyerDead == true)

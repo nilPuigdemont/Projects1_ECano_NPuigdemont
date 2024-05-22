@@ -15,8 +15,13 @@ public class NextLevel : MonoBehaviour
         }
     }
 
-    private void GoToNextLevel()
+    public void GoToNextLevel()
     {
         SceneManager.LoadScene(levelIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
