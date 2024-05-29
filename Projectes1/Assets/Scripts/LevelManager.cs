@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
-    public GameObject textUI;
+    
     
 
     [HideInInspector] public bool palyerDead;
