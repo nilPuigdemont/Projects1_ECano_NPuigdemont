@@ -33,7 +33,7 @@ public class HealthSystem : MonoBehaviour
                 }
                 if(this.gameObject.tag == "Player")
                 {
-                    LevelManager.palyerDead = true;
+                    LevelManager.Instance.palyerDead = true;
                 }
                 Destroy(gameObject);
 
@@ -54,6 +54,7 @@ public class HealthSystem : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        LevelManager.Instance.palyerDead = false;
 
         GameObject healthBarObj = Instantiate(healthBarPrefab, canvas.transform);
         myHealthBar = healthBarObj.GetComponent<HealthBarBehavior>();

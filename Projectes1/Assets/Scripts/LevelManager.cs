@@ -5,30 +5,51 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static LevelManager Instance;
+
     public GameObject textUI;
-    public static bool palyerDead;
-    public int sceneToReload;
+    
+
+    [HideInInspector] public bool palyerDead;
+    [HideInInspector] public GameObject enemyList;
+    [HideInInspector] public GameObject endLevel;
     void Awake()
     {
         palyerDead = false;
+
+        DontDestroyOnLoad(this);
+
+        if (Instance != null)
+        {
+            Destroy(this.gameObject);
+        }else
+        {
+            Instance = this;
+        }
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R)) 
+        if(Input.GetKeyDown(KeyCode.R) && palyerDead == true) 
         {
-            SceneManager.LoadScene(sceneToReload);
-        }
-
-        if(palyerDead == true)
-        {
-            textUI.SetActive(true);
-        }else
-        {
-            textUI.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
        
+        if(enemyList.transform.childCount == 0)
+        {
+            endLevel.SetActive(true);  
+        }
+        else
+        {
+            endLevel.SetActive(false);
+        }
+
+        Debug.Log(enemyList.transform.childCount);
+        
     }
+
+    
 }

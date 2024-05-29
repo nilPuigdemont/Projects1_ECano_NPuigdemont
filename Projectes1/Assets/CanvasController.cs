@@ -5,6 +5,7 @@ using UnityEngine;
 public class CanvasController : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject restartText;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,15 @@ public class CanvasController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.SetActive(true);
+        }
+
+        if (LevelManager.Instance.palyerDead == true)
+        {
+            restartText.SetActive(true);
+        }
+        else
+        {
+            restartText.SetActive(false);
         }
     }
 }
