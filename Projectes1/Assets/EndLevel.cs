@@ -12,8 +12,9 @@ public class EndLevel : MonoBehaviour
         this.gameObject.SetActive(false);
 
         nextScene = SceneManager.GetActiveScene().buildIndex + 1;
-        
-        if(nextScene > SceneManager.sceneCount)
+      
+
+        if ( nextScene >= SceneManager.sceneCountInBuildSettings)
         {
             nextScene = 0;
         }
