@@ -3666,7 +3666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 75, y: 61}
   m_SizeDelta: {x: 1980, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &533198595
@@ -3690,7 +3690,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: b09231f292a08ad4d8907e292aa98e3a, type: 3}
     m_FontSize: 47
     m_FontStyle: 3
     m_BestFit: 0
@@ -3705,10 +3705,10 @@ MonoBehaviour:
   m_Text: 'Press left mouse to shoot
 
 
-    use WASD to move
+    Use WASD to move
 
 
-    and enjoy !!!'
+    Enjoy !!!'
 --- !u!222 &533198596
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14475,9 +14475,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5882007344452161440, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5fe578e7f98388d43b10200fda6fe1bb, type: 2}
+    - target: {fileID: 5882007344452161440, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417885339613977240, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: b09231f292a08ad4d8907e292aa98e3a, type: 3}
     - target: {fileID: 6477606950780594658, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946173166162572709, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5fe578e7f98388d43b10200fda6fe1bb, type: 2}
+    - target: {fileID: 7946173166162572709, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
