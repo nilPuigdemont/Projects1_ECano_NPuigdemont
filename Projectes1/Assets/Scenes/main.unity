@@ -3969,7 +3969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 738764779}
   cam: {fileID: 552172215}
-  threshold: 0.25
+  threshold: 0.4
 --- !u!1001 &564403298
 PrefabInstance:
   m_ObjectHideFlags: 0
