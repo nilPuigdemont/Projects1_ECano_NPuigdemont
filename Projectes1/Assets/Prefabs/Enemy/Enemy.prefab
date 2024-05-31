@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 713467074, guid: 0740ad620b0f769468191c991450ffa3, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
   healthBarPrefab: {fileID: 3500657651612552147, guid: 91ed7a8b2edacc54f857464ef7d1cdd5, type: 3}
   deathEffectPrefb: {fileID: 0}
   canvas: {fileID: 0}
