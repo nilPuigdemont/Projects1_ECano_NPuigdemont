@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public bool palyerDead;
     [HideInInspector] public GameObject enemyList;
     [HideInInspector] public GameObject endLevel;
+
+    private int totalEnemies;
+    
     void Awake()
     {
         palyerDead = false;
@@ -28,6 +33,10 @@ public class LevelManager : MonoBehaviour
         
     }
 
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
@@ -45,7 +54,7 @@ public class LevelManager : MonoBehaviour
             endLevel.SetActive(false);
         }
 
-        Debug.Log(enemyList.transform.childCount);
+        //Debug.Log(enemyList.transform.childCount);
         
     }
 

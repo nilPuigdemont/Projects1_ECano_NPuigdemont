@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyListSet : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         LevelManager.Instance.enemyList = this.gameObject;
     }
