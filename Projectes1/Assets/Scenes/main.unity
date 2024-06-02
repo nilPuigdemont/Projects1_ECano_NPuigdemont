@@ -14758,6 +14758,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6941857232273932798, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941857232273932798, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14899,6 +14907,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 552172216}
   - {fileID: 7349811070247414052}
+  - {fileID: 1905687048}
   - {fileID: 885119335}
   - {fileID: 778842847}
   - {fileID: 1371073751851521828}
@@ -14906,6 +14915,5 @@ SceneRoots:
   - {fileID: 2100108285832919020}
   - {fileID: 1916042118}
   - {fileID: 98171551}
-  - {fileID: 1905687048}
   - {fileID: 444084774}
   - {fileID: 1472872727}
