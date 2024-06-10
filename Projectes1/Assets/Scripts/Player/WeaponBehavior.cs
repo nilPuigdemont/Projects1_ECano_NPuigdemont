@@ -19,6 +19,8 @@ public class WeaponBehavior : MonoBehaviour
     public Transform shotPos;
     Rigidbody2D rb;
 
+    [HideInInspector] public bool playerSeen = false;
+
     void Start()
     {
         secondsSinceLastShot = secBeetweenShots;
@@ -30,7 +32,7 @@ public class WeaponBehavior : MonoBehaviour
     void Update()
     {
         secondsSinceLastShot += Time.deltaTime;
-        if(References.player != null)
+        if(References.player != null && playerSeen == true)
         {
             LookToTarget(References.player.transform.position);
         }

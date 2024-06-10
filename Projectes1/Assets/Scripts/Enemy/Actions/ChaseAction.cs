@@ -7,7 +7,7 @@ public class ChaseAction : FSMAction
     public override void OnEnter(BaseStateMachine stateMachine)
     {
         var patrollingAgent = stateMachine.GetComponent<PatrollingAgent>();
-        patrollingAgent.moveSpeed = patrollingAgent.moveSpeed + 2;
+        patrollingAgent.moveSpeed = patrollingAgent.moveSpeed + 1;
         stateMachine.animator.SetBool("Shoot", false);
     }
     public override void Execute(BaseStateMachine stateMachine)
@@ -25,6 +25,6 @@ public class ChaseAction : FSMAction
     {
         var patrollingAgent = stateMachine.GetComponent<PatrollingAgent>();
         patrollingAgent.hasPath = false;
-        patrollingAgent.moveSpeed = patrollingAgent.moveSpeed - 2;
+        patrollingAgent.moveSpeed = patrollingAgent.moveSpeed - 1;
     }
 }
