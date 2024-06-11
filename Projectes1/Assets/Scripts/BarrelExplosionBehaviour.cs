@@ -8,6 +8,7 @@ public class BarrelExplosionBehaviour : MonoBehaviour
     // Start is called before the first frame update
     public float radius;
     public float damage;
+    public GameObject ExplosionFX;
     // Update is called once per frame
     void Update()
     {
@@ -32,13 +33,22 @@ public class BarrelExplosionBehaviour : MonoBehaviour
     {
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position, radius);
 
+        Destroy(gameObject);
+
         for (int i = 0; i < inRange.Length; i++)
         {
             if (inRange[i].GetComponent<HealthSystem>() != null) 
             {
                 inRange[i].GetComponent<HealthSystem>().TakeDamage(damage);
             }
+
+            if (inRange[i].gameObject.tag == "Explosive")
+            {
+                inRange[i].GetComponent<BarrelExplosionBehaviour>().Explosion();
+            }
         }
-        Destroy(gameObject);
+        Instantiate(ExplosionFX, transform.position, ExplosionFX.transform.rotation);
+        
+
     }
 }

@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-1529768195604615717
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: e22b439aa53a40e428be5f141674e4d6
+  m_EffectName: Send
+  m_MixLevel: ce35b1eb65f14a24a85f955781716b62
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -67,5 +81,49 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 180f6460b41dfeb459fa977ed11e1c59
   m_FloatValues:
-    1e37293c804f86644a6cc49b61a61d07: -19.999998
+    c6e2c1fbf70caff499d50f705c37262a: 0.151
+    1e37293c804f86644a6cc49b61a61d07: -20
+    1d3a2b6f14917344ea4dff5628b35e27: 0.8
   m_TransitionOverrides: {}
+--- !u!244 &2028291875180024333
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 6a525f0f915ff5848a42bff958b4864a
+  m_EffectName: Echo
+  m_MixLevel: 416e07ebd600dae4db84acc35749e214
+  m_Parameters:
+  - m_ParameterName: Delay
+    m_GUID: 223942d99a87ecf4fb48a6de4b24560a
+  - m_ParameterName: Decay
+    m_GUID: 4abf3279dbfd9db4ebbaf5821dd68806
+  - m_ParameterName: Max channels
+    m_GUID: 501a11ea11ab9f442a7c910b37239fb7
+  - m_ParameterName: Drymix
+    m_GUID: e977826080a52914eb6211d84f60b049
+  - m_ParameterName: Wetmix
+    m_GUID: ac3a48707aa131b42a707b8c266af7ad
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &4264259501854639259
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c438c56207507e341a89fc0f7276b11c
+  m_EffectName: Lowpass
+  m_MixLevel: fe22bca56d4b5c240854b7c7b3d213a4
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: deaa7801d0266214fb00563090516e04
+  - m_ParameterName: Resonance
+    m_GUID: f91ee005c7163b945817895f07e596bb
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
