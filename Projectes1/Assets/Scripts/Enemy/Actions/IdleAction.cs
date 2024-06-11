@@ -12,6 +12,9 @@ public class IdleAction : FSMAction
         patrollingAgent.hasPath = false;
         var weaponBehaviour = stateMachine.GetComponent<WeaponBehavior>();
         weaponBehaviour.playerSeen = false;
+
+        var animator = stateMachine.GetComponentInChildren<Animator>();
+        animator.Play("PlayerIdle");
     }
 
     public override void Execute(BaseStateMachine stateMachine)
