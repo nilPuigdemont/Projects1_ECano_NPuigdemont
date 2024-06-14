@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   cam: {fileID: 5613902324640299736}
-  threshold: 0.4
+  threshold: 0.6
 --- !u!82 &4084841428524538281
 AudioSource:
   m_ObjectHideFlags: 0
