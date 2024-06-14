@@ -28,6 +28,9 @@ public class IdleAction : FSMAction
         patrollingAgent.hasPath = true;
         var weaponBehaviour = stateMachine.GetComponent<WeaponBehavior>();
         weaponBehaviour.playerSeen = true;
+        
+        var animator = stateMachine.GetComponentInChildren<Animator>();
+        animator.Play("PlayerShot");
     }
 
 
