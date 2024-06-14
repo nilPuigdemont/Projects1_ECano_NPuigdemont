@@ -16,10 +16,13 @@ public class HealthSystem : MonoBehaviour
     HealthBarBehavior myHealthBar;
     public Transform canvas;
 
+    public AudioClip HurtClip;
+
     [SerializeField] private float offset;
     public void TakeDamage(float damageAmount)
     {
 
+        SoundManager.Instance?.PlayAudio(HurtClip);
 
         if (currentHealth > 0)
         {
