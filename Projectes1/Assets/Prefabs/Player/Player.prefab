@@ -289,6 +289,7 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 3500657651612552147, guid: 91ed7a8b2edacc54f857464ef7d1cdd5, type: 3}
   deathEffectPrefb: {fileID: 0}
   canvas: {fileID: 0}
+  HurtClip: {fileID: 8300000, guid: 77959db63252bf946a4b4a61b02b9f66, type: 3}
   offset: 0.5
 --- !u!82 &6276606242747158029
 AudioSource:
