@@ -6,6 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "FSM/Actions/Shoot")]
 public class ShootAction : FSMAction
 {
+    public override void OnEnter(BaseStateMachine stateMachine)
+    {
+        var enemyShootBehaviour = stateMachine.GetComponent<WeaponBehavior>();
+        enemyShootBehaviour.playerSeen = true;
+    }
     public override void Execute(BaseStateMachine stateMachine)
     {
         var enemyVision = stateMachine.GetComponent<EnemyVision>();
@@ -19,5 +24,10 @@ public class ShootAction : FSMAction
         }
         
 
+    }
+    public override void OnExit(BaseStateMachine stateMachine)
+    {
+        var enemyShootBehaviour = stateMachine.GetComponent<WeaponBehavior>();
+        enemyShootBehaviour.playerSeen = false;
     }
 }
