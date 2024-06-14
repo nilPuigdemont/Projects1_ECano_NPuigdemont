@@ -46,10 +46,10 @@ public class WeaponBehavior : MonoBehaviour
         if (secondsSinceLastShot >= secBeetweenShots)
         {
 
-            /*References.spawner.activated = true; //shooting alerts the spawner
+            //References.spawner.activated = true; 
             audioSource.Play();
-            References.screenShake.joltVector = transform.forward * kickAmount;
-            */
+            //References.screenShake.joltVector = transform.forward * kickAmount;
+            
 
             for (int i = 0; i < numberBullets; i++)
             {
