@@ -9,7 +9,15 @@ public class BarrelExplosionBehaviour : MonoBehaviour
     public float radius;
     public float damage;
     public GameObject ExplosionFX;
+    public AudioClip ExplosionAudioClip;
+    
+   
     // Update is called once per frame
+
+    private void Start()
+    {
+        
+    }
     void Update()
     {
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position, radius);
@@ -33,6 +41,8 @@ public class BarrelExplosionBehaviour : MonoBehaviour
     {
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position, radius);
 
+        SoundManager.Instance.PlayAudio(ExplosionAudioClip);
+
         Destroy(gameObject);
 
         for (int i = 0; i < inRange.Length; i++)
@@ -48,6 +58,7 @@ public class BarrelExplosionBehaviour : MonoBehaviour
             }
         }
         Instantiate(ExplosionFX, transform.position, ExplosionFX.transform.rotation);
+
         
 
     }
