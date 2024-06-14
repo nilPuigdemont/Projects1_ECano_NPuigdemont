@@ -4920,6 +4920,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 2047463597}
+    - target: {fileID: 4811636942376629619, guid: 06b9a070099372f4895fb91eabeddd5b, type: 3}
+      propertyPath: _initialState
+      value: 
+      objectReference: {fileID: 11400000, guid: 703a78b74855e924289df79dce3d0e25, type: 2}
     - target: {fileID: 7145038692591836462, guid: 06b9a070099372f4895fb91eabeddd5b, type: 3}
       propertyPath: _patrolPoints.Array.size
       value: 1
@@ -6229,6 +6233,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 2047463597}
+    - target: {fileID: 4811636942376629619, guid: 06b9a070099372f4895fb91eabeddd5b, type: 3}
+      propertyPath: _initialState
+      value: 
+      objectReference: {fileID: 11400000, guid: 703a78b74855e924289df79dce3d0e25, type: 2}
     - target: {fileID: 7145038692591836462, guid: 06b9a070099372f4895fb91eabeddd5b, type: 3}
       propertyPath: _patrolPoints.Array.size
       value: 1
@@ -9001,7 +9009,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0059470534, y: 0.012913227}
+  m_Offset: {x: -0.0059470534, y: -0.5984894}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9012,7 +9020,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9845556, y: 1.9491792}
+  m_Size: {x: 1.9845556, y: 0.72637385}
   m_EdgeRadius: 0
 --- !u!1 &1088096977
 GameObject:
@@ -9521,6 +9529,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 2047463597}
+    - target: {fileID: 4811636942376629619, guid: 06b9a070099372f4895fb91eabeddd5b, type: 3}
+      propertyPath: _initialState
+      value: 
+      objectReference: {fileID: 11400000, guid: 703a78b74855e924289df79dce3d0e25, type: 2}
     - target: {fileID: 7145038692591836462, guid: 06b9a070099372f4895fb91eabeddd5b, type: 3}
       propertyPath: _patrolPoints.Array.size
       value: 1
