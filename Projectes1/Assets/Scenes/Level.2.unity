@@ -22832,6 +22832,14 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 2047463597}
+    - target: {fileID: 920226184220760219, guid: 06b9a070099372f4895fb91eabeddd5b, type: 3}
+      propertyPath: Priority
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 920226184220760219, guid: 06b9a070099372f4895fb91eabeddd5b, type: 3}
+      propertyPath: m_Volume
+      value: 0.854
+      objectReference: {fileID: 0}
     - target: {fileID: 7145038692591836462, guid: 06b9a070099372f4895fb91eabeddd5b, type: 3}
       propertyPath: _patrolPoints.Array.data[0]
       value: 
