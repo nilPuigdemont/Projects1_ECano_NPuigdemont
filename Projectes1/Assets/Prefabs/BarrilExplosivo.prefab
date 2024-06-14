@@ -133,6 +133,7 @@ MonoBehaviour:
   radius: 2
   damage: 100
   ExplosionFX: {fileID: 8826763285353267388, guid: a01d4ae6bbc45e44796c65d54bf1f6eb, type: 3}
+  ExplosionAudioClip: {fileID: 8300000, guid: b6cf7a2d3bbd9734f89112f2afc6d6d2, type: 3}
 --- !u!58 &751195253302173316
 CircleCollider2D:
   m_ObjectHideFlags: 0
