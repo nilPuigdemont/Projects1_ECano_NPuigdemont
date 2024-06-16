@@ -112,8 +112,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.154, y: -1.203, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5151910030078675381}
   m_Father: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423121372a1b430478ac9d910047ecc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  radius: 3
   damage: 100
   ExplosionFX: {fileID: 8826763285353267388, guid: a01d4ae6bbc45e44796c65d54bf1f6eb, type: 3}
   ExplosionAudioClip: {fileID: 8300000, guid: b6cf7a2d3bbd9734f89112f2afc6d6d2, type: 3}
