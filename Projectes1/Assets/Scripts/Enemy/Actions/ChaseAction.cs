@@ -25,6 +25,7 @@ public class ChaseAction : FSMAction
     {
         var patrollingAgent = stateMachine.GetComponent<PatrollingAgent>();
         patrollingAgent.hasPath = false;
+        patrollingAgent.agent.isStopped = true;
         patrollingAgent.moveSpeed = patrollingAgent.moveSpeed - 1;
     }
 }

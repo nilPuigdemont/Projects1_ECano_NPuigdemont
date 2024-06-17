@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 public class PatrollingAgent : MonoBehaviour
@@ -14,9 +15,11 @@ public class PatrollingAgent : MonoBehaviour
 
 
     [HideInInspector]public float moveSpeed;
+    [HideInInspector]public NavMeshAgent agent; 
     public float stoppingDistance = 0.001f;
 
     BaseStateMachine stateMachine;
+
 
 
     private void Awake()
@@ -24,6 +27,7 @@ public class PatrollingAgent : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         stateMachine = GetComponent<BaseStateMachine>();
+        agent = GetComponent<NavMeshAgent>();
     }
     public bool hasPath { get;  set; }
 
@@ -85,8 +89,10 @@ public class PatrollingAgent : MonoBehaviour
             moveDirection = Vector2.zero;
 
             if (remainingDistance > stoppingDistance)
-                moveDirection = (destination - new Vector2(transform.position.x, 
-                                 transform.position.y)).normalized;
+                //moveDirection = (destination - new Vector2(transform.position.x, 
+                                 //transform.position.y)).normalized;
+                                 agent.SetDestination(destination);
+                                 
                 
         }else if (!hasPath) { moveDirection = moveDirection = Vector2.zero; }
 

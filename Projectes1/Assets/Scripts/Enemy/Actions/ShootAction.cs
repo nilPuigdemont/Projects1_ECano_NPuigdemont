@@ -29,5 +29,8 @@ public class ShootAction : FSMAction
     {
         var enemyShootBehaviour = stateMachine.GetComponent<WeaponBehavior>();
         enemyShootBehaviour.playerSeen = false;
+        var patrollingAgent = stateMachine.GetComponent<PatrollingAgent>();
+        
+        patrollingAgent.agent.isStopped = false;
     }
 }
