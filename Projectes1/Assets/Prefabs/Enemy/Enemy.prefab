@@ -345,6 +345,7 @@ MonoBehaviour:
   deathEffectPrefb: {fileID: 0}
   canvas: {fileID: 0}
   HurtClip: {fileID: 0}
+  BloodFx: {fileID: 1121615188354158620, guid: 53c9efcc057905e4a8ba6109e14d6641, type: 3}
   offset: 0.5
 --- !u!82 &920226184220760219
 AudioSource:

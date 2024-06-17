@@ -17,12 +17,19 @@ public class HealthSystem : MonoBehaviour
     public Transform canvas;
 
     public AudioClip HurtClip;
-
+    public GameObject BloodFx;
     [SerializeField] private float offset;
+
     public void TakeDamage(float damageAmount)
     {
 
         SoundManager.Instance?.PlayAudio(HurtClip);
+
+        if(BloodFx != null ) 
+        {
+            Instantiate(BloodFx, transform.position, BloodFx.transform.rotation);
+        }
+        
 
         if (currentHealth > 0)
         {
