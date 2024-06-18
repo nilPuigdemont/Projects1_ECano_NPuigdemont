@@ -9,7 +9,7 @@ public class HasBeenShot : Decision
     public override bool Decide(BaseStateMachine stateMachine)
     {
         var HealthSystem = stateMachine.GetComponent<HealthSystem>();   
-
+        
         if(HealthSystem.currentHealth < HealthSystem.maxHealth)
         {
             return true;

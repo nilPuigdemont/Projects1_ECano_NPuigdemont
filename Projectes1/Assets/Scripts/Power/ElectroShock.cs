@@ -4,26 +4,45 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class ElectroShock : Power
+public class ElectroShock : MonoBehaviour
 {
 
     public float radius;
     public BaseState shock;
+    public float speed;
+    private Rigidbody2D rb;
+
+    private float currentTime;
+    public float destroyTime;
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        currentTime = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentTime += Time.deltaTime;
+        rb.velocity = transform.up * speed;
+        
         Collider2D[] shockRange = Physics2D.OverlapCircleAll(transform.position, radius);    
 
         for (int i = 0; i < shockRange.Length; i++)
         {
-            ApplyShock(shockRange[i]);
+            if (shockRange[i].GetComponent<BaseStateMachine>()) 
+            {
+                ApplyShock(shockRange[i]);
+            }
+            
         }
+
+        if (currentTime >= destroyTime)
+        {
+            Destroy(gameObject);
+        }
+
 
     }
 

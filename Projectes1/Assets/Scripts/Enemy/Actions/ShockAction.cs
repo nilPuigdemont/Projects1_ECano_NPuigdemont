@@ -8,6 +8,11 @@ public class ShockAction : FSMAction
 {
     public GameObject ShockFx;
     private GameObject shockRay;
+
+    private float currentTime = 0;
+    public float timeToPass;
+
+    [SerializeField] private BaseState state;
     public override void OnEnter(BaseStateMachine stateMachine)
     {
         var patrollingAgent = stateMachine.GetComponent<PatrollingAgent>();
@@ -19,12 +24,18 @@ public class ShockAction : FSMAction
 
         animator.Play("PlayerIdle");
 
-       shockRay = Instantiate(ShockFx, stateMachine.gameObject.transform.position, stateMachine.gameObject.transform.rotation);
+       shockRay = Instantiate(ShockFx, stateMachine.gameObject.transform.position, ShockFx.transform.rotation);
     }
 
     public override void Execute(BaseStateMachine stateMachine)
     {
-       
+        currentTime += Time.deltaTime;
+
+        if (currentTime>= timeToPass)
+        {
+            stateMachine.CurrentState = state;
+            
+        }
     }
 
     public override void OnExit(BaseStateMachine stateMachine)
@@ -33,6 +44,10 @@ public class ShockAction : FSMAction
         patrollingAgent.hasPath = true;
         var weaponBehaviour = stateMachine.GetComponent<WeaponBehavior>();
         weaponBehaviour.playerSeen = true;
+        currentTime = 0;
+
+        var animator = stateMachine.GetComponentInChildren<Animator>();
+        animator.Play("playerWalkUp");
         Destroy(shockRay);
     }
 

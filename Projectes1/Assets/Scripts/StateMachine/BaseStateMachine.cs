@@ -11,7 +11,10 @@ public class BaseStateMachine : MonoBehaviour
     public Animator animator;
     public float speed => enemyStats.speed;
 
-    private Dictionary<Type, Component> _cachedComponents; 
+    private Dictionary<Type, Component> _cachedComponents;
+    
+    
+   
     // Start is called before the first frame update
     private void Awake()
     {
@@ -41,6 +44,8 @@ public class BaseStateMachine : MonoBehaviour
     private void Update()
     {
         CurrentState.Execute(this);
+
+       
     }
 
     public new T GetComponent<T>() where T : Component
@@ -56,6 +61,8 @@ public class BaseStateMachine : MonoBehaviour
         return component;
     }
 
+
+   
 
     
 }

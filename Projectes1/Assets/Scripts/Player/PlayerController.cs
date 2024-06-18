@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public Animator playerAnimator;
     
 
+    [SerializeField] private PowerHolder powerHolder;
+
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
@@ -62,12 +64,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            manaSystem.CastAttack(15);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            manaSystem.CastAttack(-15);
+            manaSystem.CastAttack(powerHolder);
         }
 
     }

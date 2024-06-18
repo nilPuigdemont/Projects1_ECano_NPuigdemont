@@ -37,8 +37,12 @@ public class ManaSystem : MonoBehaviour
 
     }
 
-    public void CastAttack(float manaCost)
+    public void CastAttack(PowerHolder power)
     {
-        currentMana-=manaCost;
+        if (currentMana < power.manaCost) return;
+
+        currentMana-= power.manaCost;
+        Instantiate (power.powerGameObject, transform.position, transform.rotation);
+  
     }
 }
