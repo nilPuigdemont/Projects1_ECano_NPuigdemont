@@ -25762,7 +25762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2341204237969119545, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -982
+      value: -135
       objectReference: {fileID: 0}
     - target: {fileID: 3196024261564848156, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -25790,7 +25790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3196024261564848156, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -590
+      value: -945
       objectReference: {fileID: 0}
     - target: {fileID: 4231060225230486714, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -25818,7 +25818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4231060225230486714, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -786
+      value: -675
       objectReference: {fileID: 0}
     - target: {fileID: 5135546929483050181, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_text
@@ -25827,6 +25827,10 @@ PrefabInstance:
     - target: {fileID: 5135546929483050181, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_fontSize
       value: 59.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184804895981565803, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6477606950780594658, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_Name
@@ -25886,7 +25890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7406922730555350235, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -394
+      value: -405
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36551,6 +36555,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1602616774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 456790523687769556, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+  m_PrefabInstance: {fileID: 1154795369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1607236786
 GameObject:
   m_ObjectHideFlags: 0
@@ -43502,6 +43511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5626330025218515892, guid: 3eecec4e3df87de4db2e55f4e2adecac, type: 3}
+      propertyPath: ManaBar
+      value: 
+      objectReference: {fileID: 1602616774}
     - target: {fileID: 5858916119855727535, guid: 3eecec4e3df87de4db2e55f4e2adecac, type: 3}
       propertyPath: m_LocalScale.x
       value: 1

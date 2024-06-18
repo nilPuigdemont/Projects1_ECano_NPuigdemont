@@ -23407,6 +23407,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+--- !u!1 &2100108285832919021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 456790523687769556, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+  m_PrefabInstance: {fileID: 2100108285832919020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4626885448315269413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23504,6 +23509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5626330025218515892, guid: 3eecec4e3df87de4db2e55f4e2adecac, type: 3}
+      propertyPath: ManaBar
+      value: 
+      objectReference: {fileID: 2100108285832919021}
     - target: {fileID: 5817059963057002675, guid: 3eecec4e3df87de4db2e55f4e2adecac, type: 3}
       propertyPath: audioSource
       value: 

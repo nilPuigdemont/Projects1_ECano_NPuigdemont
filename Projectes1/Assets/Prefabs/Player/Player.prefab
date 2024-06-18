@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   playerAnimator: {fileID: 6320815116408016798}
+  powerHolder: {fileID: 0}
 --- !u!114 &5817059963057002675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,3 +402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3d2f17e3556234fb3370111bb0f4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ManaBar: {fileID: 0}
+  MaxMana: 100
+  currentMana: 0
