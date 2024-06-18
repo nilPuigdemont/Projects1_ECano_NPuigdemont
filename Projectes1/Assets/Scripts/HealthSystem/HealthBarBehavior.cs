@@ -10,6 +10,7 @@ public class HealthBarBehavior : MonoBehaviour
     public Image healthFill;
     public Image background;
 
+
     public void ShowHealthFraction(float fraction)
     {
         healthFill.rectTransform.localScale = new Vector3(fraction,1,1);

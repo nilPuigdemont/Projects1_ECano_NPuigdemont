@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     private WeaponBehavior weaponBehavior;
-
+    private ManaSystem manaSystem;
     public Animator playerAnimator;
     
 
@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
         rb= GetComponent<Rigidbody2D>();
         weaponBehavior = GetComponent<WeaponBehavior>();
         References.player = gameObject;
+        manaSystem = GetComponent<ManaSystem>();
     }
 
     // Update is called once per frame
@@ -58,6 +59,17 @@ public class PlayerController : MonoBehaviour
         {
             weaponBehavior.Fire();
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            manaSystem.CastAttack(15);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            manaSystem.CastAttack(-15);
+        }
+
     }
 
     private void LookToMouse()

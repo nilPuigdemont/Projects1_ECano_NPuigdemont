@@ -292,6 +292,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3915017533421080740, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5135546929483050181, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -303,6 +307,14 @@ PrefabInstance:
     - target: {fileID: 6477606950780594658, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495847758250804799, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495847758250804799, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7604398368222108062, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -3112,6 +3124,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0402f59917cf02245a77e27f42307f9d, type: 3}
+--- !u!1 &982313939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 456790523687769556, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+  m_PrefabInstance: {fileID: 238712301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &982313941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 250802333737063713, guid: 2c789106f38a2c24ca03b43342149bc4, type: 3}
+  m_PrefabInstance: {fileID: 238712301}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982313939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8aac278d203654bbbbd6b8fe9a234a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1041434632
 GameObject:
   m_ObjectHideFlags: 0
@@ -3279,6 +3307,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5626330025218515892, guid: 3eecec4e3df87de4db2e55f4e2adecac, type: 3}
+      propertyPath: ManaBar
+      value: 
+      objectReference: {fileID: 982313939}
+    - target: {fileID: 5626330025218515892, guid: 3eecec4e3df87de4db2e55f4e2adecac, type: 3}
+      propertyPath: MaxMana
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626330025218515892, guid: 3eecec4e3df87de4db2e55f4e2adecac, type: 3}
+      propertyPath: manaBarBehaviour
+      value: 
+      objectReference: {fileID: 982313941}
     - target: {fileID: 5858916119855727535, guid: 3eecec4e3df87de4db2e55f4e2adecac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.18
