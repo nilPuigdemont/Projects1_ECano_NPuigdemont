@@ -24,7 +24,8 @@ public class ShockAction : FSMAction
 
         animator.Play("PlayerIdle");
 
-       shockRay = Instantiate(ShockFx, stateMachine.gameObject.transform.position, ShockFx.transform.rotation);
+        shockRay = Instantiate(ShockFx, stateMachine.gameObject.transform.position, ShockFx.transform.rotation);
+        shockRay.transform.parent = stateMachine.gameObject.transform;
     }
 
     public override void Execute(BaseStateMachine stateMachine)

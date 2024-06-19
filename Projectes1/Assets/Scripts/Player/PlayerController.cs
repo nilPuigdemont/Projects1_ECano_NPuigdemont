@@ -14,9 +14,14 @@ public class PlayerController : MonoBehaviour
     private WeaponBehavior weaponBehavior;
     private ManaSystem manaSystem;
     public Animator playerAnimator;
-    
 
+    
     [SerializeField] private PowerHolder powerHolder;
+
+    private bool CanCastSpell = true;
+    private float currentTime = 0;
+
+    private float timeToCast = 2f;
 
     void Start()
     {
@@ -32,6 +37,11 @@ public class PlayerController : MonoBehaviour
         if (PauseMenuBehaviour.isPaused) return;
         InputHandeler();
         PlayerAnimator();
+
+        currentTime += Time.deltaTime;
+
+        if (CanCastSpell == false) Cooldown(timeToCast);
+        
     }
 
     private void FixedUpdate()
@@ -62,9 +72,10 @@ public class PlayerController : MonoBehaviour
             weaponBehavior.Fire();
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && CanCastSpell)
         {
-            manaSystem.CastAttack(powerHolder);
+            CanCastSpell = false;
+            manaSystem.CastAttack(powerHolder);   
         }
 
     }
@@ -85,5 +96,14 @@ public class PlayerController : MonoBehaviour
     {
         playerAnimator.SetBool("Shoot", Input.GetKey(KeyCode.Mouse0));
         playerAnimator.SetBool("Walking", hInput > 0 || hInput < 0 || vInput < 0 || vInput > 0);
+    }
+
+    private void Cooldown (float waitTime)
+    {
+        if(currentTime >= waitTime)
+        {
+            CanCastSpell = true;
+            currentTime = 0;
+        }
     }
 }
