@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
 
     public static LevelManager Instance;
 
-    [HideInInspector] public bool palyerDead;
+    [HideInInspector] public bool playerDead;
     [HideInInspector] public GameObject enemyList;
     [HideInInspector] public GameObject endLevel;
 
@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     
     void Awake()
     {
-        palyerDead = false;
+        playerDead = false;
 
         DontDestroyOnLoad(this);
 
@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R) && palyerDead == true) 
+        if(Input.GetKeyDown(KeyCode.R) && playerDead == true) 
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

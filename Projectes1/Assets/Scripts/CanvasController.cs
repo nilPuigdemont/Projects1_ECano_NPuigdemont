@@ -23,7 +23,7 @@ public class CanvasController : MonoBehaviour
             pauseMenu.SetActive(true);
         }
 
-        if (LevelManager.Instance.palyerDead == true)
+        if (LevelManager.Instance.playerDead == true)
         {
             restartText.SetActive(true);
         }
