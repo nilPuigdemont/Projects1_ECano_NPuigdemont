@@ -39,11 +39,7 @@ public class SoundManager : MonoBehaviour
     public void PlayAudio(AudioClip audio)
     {
 
-       /* m_AudioSource.clip = audio;
-
-        m_AudioSource.Play();
-        */
        m_AudioSource.PlayOneShot(audio);
-       
+ 
     }
 }

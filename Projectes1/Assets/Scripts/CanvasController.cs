@@ -8,6 +8,7 @@ public class CanvasController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject restartText;
     public TMP_Text remainingEnemies;
+    public TMP_Text currentBullets;
     private int totalEnemies;
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,17 @@ public class CanvasController : MonoBehaviour
         {
             remainingEnemies.text = "Go to Next Level";
         }
+
+        if(References.player.GetComponent<WeaponBehavior>().currentBullets <= 0)
+        {
+            currentBullets.text = "Reloading";
+        }
+        else
+        {
+            currentBullets.text = "Bullets :  " + References.player.GetComponent<WeaponBehavior>().currentBullets + " / " + References.player.GetComponent<WeaponBehavior>().maxBullets;
+        }
+        
+
 
     }
 }

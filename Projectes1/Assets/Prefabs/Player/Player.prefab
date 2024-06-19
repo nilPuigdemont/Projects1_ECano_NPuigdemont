@@ -269,6 +269,8 @@ MonoBehaviour:
   bullet: {fileID: 5278590127237664194, guid: 1d0674ee75c899c4b9d089abe4039439, type: 3}
   accuracy: 100
   numberBullets: 1
+  maxBullets: 8
+  currentBullets: 0
   secBeetweenShots: 0.15
   audioSource: {fileID: 6276606242747158029}
   kickAmount: 0

@@ -16,13 +16,18 @@ public class PlayerController : MonoBehaviour
     public Animator playerAnimator;
 
     
+    
     [SerializeField] private PowerHolder powerHolder;
 
     private bool CanCastSpell = true;
-    private float currentTime = 0;
-
+    private float currentTimeToCast = 0;
     private float timeToCast = 2f;
 
+
+    bool isReloading = false;
+
+    private float currentTimeOfReload = 0;
+    private float timeToReload = 2f;
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
@@ -39,10 +44,10 @@ public class PlayerController : MonoBehaviour
         InputHandeler();
         PlayerAnimator();
 
-        currentTime += Time.deltaTime;
+        currentTimeToCast += Time.deltaTime;
 
         if (CanCastSpell == false) Cooldown(timeToCast);
-        
+        if(isReloading) currentTimeOfReload += Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -66,11 +71,29 @@ public class PlayerController : MonoBehaviour
         vInput = Input.GetAxisRaw("Vertical");
 
         
+        if (weaponBehavior.currentBullets <= 0)
+        {
+            isReloading = true;
+            
 
+            if (currentTimeOfReload >= timeToReload)
+            {
+                weaponBehavior.Reload();
+                isReloading = false;
+                currentTimeOfReload = 0;
+             
+            }
+
+        }
 
         if (Input.GetKey(KeyCode.Mouse0)) 
         {
-            weaponBehavior.Fire();
+            if (weaponBehavior.currentBullets > 0) 
+            {
+                weaponBehavior.Fire();
+
+            }
+
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse1) && CanCastSpell)
@@ -95,16 +118,21 @@ public class PlayerController : MonoBehaviour
 
     void PlayerAnimator()
     {
+
+
         playerAnimator.SetBool("Shoot", Input.GetKey(KeyCode.Mouse0));
+
         playerAnimator.SetBool("Walking", hInput > 0 || hInput < 0 || vInput < 0 || vInput > 0);
     }
 
     private void Cooldown (float waitTime)
     {
-        if(currentTime >= waitTime)
+        if(currentTimeToCast >= waitTime)
         {
             CanCastSpell = true;
-            currentTime = 0;
+            currentTimeToCast = 0;
         }
     }
+
+        
 }

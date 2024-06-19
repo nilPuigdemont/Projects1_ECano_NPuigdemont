@@ -8,13 +8,21 @@ public class WeaponBehavior : MonoBehaviour
 
     public float accuracy;
     public float numberBullets;
+    public int maxBullets;
+    [HideInInspector] public int currentBullets;
+    
 
     public float secBeetweenShots;
     float secondsSinceLastShot;
+    
+   
+
+  
 
 
     public AudioSource audioSource;
     public float kickAmount;
+
 
     public Transform shotPos;
     Rigidbody2D rb;
@@ -24,15 +32,19 @@ public class WeaponBehavior : MonoBehaviour
     void Start()
     {
         secondsSinceLastShot = secBeetweenShots;
+        currentBullets = maxBullets;
         audioSource = GetComponent<AudioSource>();  
         rb = GetComponent<Rigidbody2D>();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         secondsSinceLastShot += Time.deltaTime;
-        if(References.player != null && playerSeen == true)
+        
+        if (References.player != null && playerSeen == true)
         {
             LookToTarget(References.player.transform.position);
         }
@@ -45,15 +57,13 @@ public class WeaponBehavior : MonoBehaviour
 
         if (secondsSinceLastShot >= secBeetweenShots)
         {
-
-            //References.spawner.activated = true; 
+    
             audioSource.Play();
-            //References.screenShake.joltVector = transform.forward * kickAmount;
-            
+            currentBullets--;
 
             for (int i = 0; i < numberBullets; i++)
             {
-                //GameObject newBullet = 
+                
                     
                 Instantiate(bullet, shotPos.position, transform.rotation);
 
@@ -80,5 +90,13 @@ public class WeaponBehavior : MonoBehaviour
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90;
         rb.rotation = angle;
     }
+
+    public void Reload()
+    {
+        currentBullets = maxBullets;
+                 
+        
+    }
+
 }
 
