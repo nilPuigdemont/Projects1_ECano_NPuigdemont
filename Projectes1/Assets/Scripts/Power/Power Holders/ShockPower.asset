@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4442a784c11774eaa772bffa254054, type: 3}
   m_Name: ShockPower
   m_EditorClassIdentifier: 
-  manaCost: 15
+  manaCost: 55
   damage: 0
   powerGameObject: {fileID: 4037574931376510798, guid: 7cd7ca25524040f4084d3a59cd1b630e, type: 3}

@@ -41,7 +41,7 @@ public class BarrelExplosionBehaviour : MonoBehaviour
     {
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position, radius);
 
-        SoundManager.Instance.PlayAudio(ExplosionAudioClip);
+        SoundManager.Instance?.PlayAudio(ExplosionAudioClip);
 
         Destroy(gameObject);
 

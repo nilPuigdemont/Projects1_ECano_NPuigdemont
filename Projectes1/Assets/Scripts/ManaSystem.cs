@@ -34,6 +34,7 @@ public class ManaSystem : MonoBehaviour
         }
 
         manaBarBehaviour.ShowManaFraction(currentMana/MaxMana);
+        manaSelfRecover();
 
     }
 
@@ -44,5 +45,11 @@ public class ManaSystem : MonoBehaviour
         currentMana-= power.manaCost;
         Instantiate (power.powerGameObject, transform.position, transform.rotation);
   
+    }
+
+
+    private void manaSelfRecover()
+    {
+        currentMana += 0.01f;
     }
 }

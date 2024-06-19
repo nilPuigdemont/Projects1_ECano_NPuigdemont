@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (PauseMenuBehaviour.isPaused) return;
+
         InputHandeler();
         PlayerAnimator();
 
