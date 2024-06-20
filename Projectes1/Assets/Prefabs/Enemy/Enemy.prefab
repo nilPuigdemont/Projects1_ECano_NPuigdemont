@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 713467074, guid: 0740ad620b0f769468191c991450ffa3, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -322,6 +322,8 @@ MonoBehaviour:
   bullet: {fileID: 5278590127237664194, guid: 1d0674ee75c899c4b9d089abe4039439, type: 3}
   accuracy: 100
   numberBullets: 1
+  maxBullets: 0
+  currentBullets: 0
   secBeetweenShots: 0.15
   audioSource: {fileID: 0}
   kickAmount: 0
