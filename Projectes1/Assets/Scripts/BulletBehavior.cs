@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,10 @@ public class BulletBehavior : MonoBehaviour
     public float secUntilDestroy;
     public float damage;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        GameObject player = References.player;
-        Vector3 direction = player.transform.position - transform.position;
 
         rb.velocity =  transform. up * bulletSpeed;
     }
@@ -39,6 +38,7 @@ public class BulletBehavior : MonoBehaviour
     }
 
 
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -46,6 +46,7 @@ public class BulletBehavior : MonoBehaviour
             HealthSystem otherHealth = other.gameObject.GetComponent<HealthSystem>();
             if(otherHealth != null ) 
             {
+                
                 otherHealth.TakeDamage(damage);
                 Destroy(gameObject);
             }

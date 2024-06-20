@@ -18,6 +18,7 @@ public class BarrelExplosionBehaviour : MonoBehaviour
     {
         
     }
+
     void Update()
     {
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position, radius);

@@ -3257,6 +3257,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5463964679615087190, guid: d800686976edf7b48bd70bbe8aede25f, type: 3}
+      propertyPath: damage
+      value: 135.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463964679615087190, guid: d800686976edf7b48bd70bbe8aede25f, type: 3}
       propertyPath: ExplosionClip
       value: 
       objectReference: {fileID: 8300000, guid: b6cf7a2d3bbd9734f89112f2afc6d6d2, type: 3}
@@ -3543,11 +3547,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1268678239573247549, guid: d800686976edf7b48bd70bbe8aede25f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.05
+      value: -5.65
       objectReference: {fileID: 0}
     - target: {fileID: 1268678239573247549, guid: d800686976edf7b48bd70bbe8aede25f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.79
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 1268678239573247549, guid: d800686976edf7b48bd70bbe8aede25f, type: 3}
       propertyPath: m_LocalPosition.z

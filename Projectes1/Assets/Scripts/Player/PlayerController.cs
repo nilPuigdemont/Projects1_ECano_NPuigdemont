@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,8 +16,7 @@ public class PlayerController : MonoBehaviour
     private ManaSystem manaSystem;
     public Animator playerAnimator;
 
-    
-    
+
     [SerializeField] private PowerHolder powerHolder;
 
     private bool CanCastSpell = true;
@@ -85,6 +85,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
 
         if (Input.GetKey(KeyCode.Mouse0)) 
         {
