@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     bool isReloading = false;
 
     private float currentTimeOfReload = 0;
-    private float timeToReload = 2f;
+    private float timeToReload = 1f;
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
