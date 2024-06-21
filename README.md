@@ -18,12 +18,12 @@ WASD pel moviment en nivells, la càmera segueix sempre al player (es mou amb el
 
 Atacar
 
-Click esquerre del ratolí, fa servir l’arma equipada (dos tipus: melee i a distancia, a distancia sempre son armes de foc), si no hi ha arma equipada s’interpreten els punys com a arma melee básica. Els atacs només fan mal als enemics (extra: entorns destructibles)
+Click esquerre del ratolí, fa servir l’arma equipada (actualment només la pistola). Els atacs només fan mal als enemics (extra: entorns destructibles)
 
-Llançar arma
-
-Click dret, llança l’arma equipada cap a la direcció del mouse (igual que un atac a distància, pero es perd l’arma equipada). No es pot dur a terme si el player no té armes.
+A futur: llançar l'arma amb clic dret.
 
 Enemics
 
-Tenen various tipus (varien stats, uns aguanten més cops però són més lents, altres corren molt però son fràgils i petits), tots fan un patrol i tenen un rang de detecció (visual i sonor). Si detecten al jugador, poden anar directament a per ell o alertar a altres enemics. Un cop detectat no el perdran de vista fins que un dels dos mori. Els enemics poden fer servir armes que es dropegen un cop morts.
+Son estàtics o fan un patrol i tenen un rang de detecció (visual i sonor). Si detecten al jugador, poden anar directament a per ell o alertar a altres enemics. Un cop detectat no el perdran de vista fins que un dels dos mori. 
+
+A futur: Els enemics poden fer servir armes que es dropegen un cop morts. Tenen various tipus (varien stats, uns aguanten més cops però són més lents, altres corren molt però son fràgils i petits).
