@@ -1,3 +1,5 @@
+IMPORTANT: La Build de Unity conté un error al tutorial que impedeix avançar quan és la primera escena carregada, es soluciona usant el botó "Restart" del menú de pausa.
+
 Hotline Miami- like
 
 Vista top down, moviment amb WASD, accions amb Mouse, eliminar tots els enemics d’un nivell per passar al següent (posar petita puntuació entremig, extra: combos de puntuació, també en funció de temps). Es poden fer varis nivells amb distribucions diferents (possible extra: modo infinit on van spawnejant enemics infinitament i vas a per la highscore).
