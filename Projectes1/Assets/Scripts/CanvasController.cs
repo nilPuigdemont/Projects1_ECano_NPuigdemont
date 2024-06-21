@@ -11,6 +11,7 @@ public class CanvasController : MonoBehaviour
     public TMP_Text currentBullets;
     private int totalEnemies;
     // Start is called before the first frame update
+    
     void Start()
     {
         totalEnemies = LevelManager.Instance.enemyList.transform.childCount;
